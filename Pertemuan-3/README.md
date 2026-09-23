@@ -1,14 +1,3 @@
-# Pertemuan 3 — Pemrograman Berbasis Kerangka Kerja (PBKK)
-
-| Detail | Keterangan |
-| --- | --- |
-| **Nama Lengkap** | Nathanael Oliver Amadhika Yuswana |
-| **NRP** | 5025241109 |
-| **Mata Kuliah** | Pemrograman Berbasis Kerangka Kerja |
-| **Kelas** | D |
-
----
-
 # Kalkulator Sederhana
 
 Aplikasi kalkulator desktop berbasis Windows Forms dengan .NET 8. Aplikasi ini memiliki tampilan terang dan menyediakan operasi aritmatika dasar.
@@ -31,6 +20,7 @@ Pertemuan-3/
 |  `- KalkulatorSederhana.csproj
 `- README.md
 ```
+
 ## Build & Run
 
 Buka terminal pada folder `Pertemuan-3`, kemudian jalankan:
