@@ -1,32 +1,35 @@
-# Pertemuan 2 - Project .NET
+# Pertemuan 2 — Pemrograman Berbasis Kerangka Kerja (PBKK)
+
+| Detail | Keterangan |
+| --- | --- |
+| **Nama Lengkap** | Nathanael Oliver Amadhika Yuswana |
+| **NRP** | 5025241109 |
+| **Mata Kuliah** | Pemrograman Berbasis Kerangka Kerja |
+| **Kelas** | D |
+
+---
 
 Repository ini berisi dua project latihan .NET 8:
 
 - `HelloWorld`: aplikasi console sederhana.
 - `SistemDataMahasiswa`: aplikasi Windows Forms untuk mengelola data mahasiswa.
 
-## Persyaratan Umum
-
-- .NET SDK 8.0 atau lebih baru.
-- Windows diperlukan untuk menjalankan project `SistemDataMahasiswa`.
-
-## HelloWorld
+## Konsol HelloWorld
 
 Aplikasi console sederhana yang menampilkan pesan `Hello, World!`.
 
-### Menjalankan
+### Build & Run
 
 Dari folder utama repository:
 
 ```powershell
+dotnet new console -n HelloWorld
 dotnet run --project .\HelloWorld\HelloWorld.csproj
 ```
 
-Output:
+Dokumentasi:
 
-```text
-Hello, World!
-```
+
 
 ### Struktur
 
@@ -46,18 +49,13 @@ Aplikasi desktop Windows Forms untuk mengelola data mahasiswa.
 - Menampilkan data dalam tabel.
 - Memvalidasi input NRP, nama, program studi, dan IPK antara 0 sampai 4.
 
-### Menjalankan
+### Build & Run
 
 Dari folder utama repository:
 
 ```powershell
+dotnet new winforms -n SistemDataMahasiswa
 dotnet run --project .\SistemDataMahasiswa\SistemDataMahasiswa.csproj
-```
-
-Untuk membuat build tanpa menjalankan aplikasi:
-
-```powershell
-dotnet build .\SistemDataMahasiswa\SistemDataMahasiswa.csproj
 ```
 
 ### Cara Penggunaan
@@ -78,3 +76,5 @@ Data aplikasi disimpan sementara di memori dan akan hilang ketika aplikasi ditut
 - `SistemDataMahasiswa/Mahasiswa.cs`: model data mahasiswa.
 - `SistemDataMahasiswa/MahasiswaService.cs`: proses tambah, ubah, hapus, tampil, dan pencarian data.
 - `SistemDataMahasiswa/SistemDataMahasiswa.csproj`: konfigurasi project .NET 8 Windows Forms.
+
+### Dokumentasi
