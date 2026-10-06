@@ -28,6 +28,7 @@ dotnet run --project .\HelloWorld\HelloWorld.csproj
 ```
 
 Dokumentasi:
+<img width="523" height="65" alt="image" src="https://github.com/user-attachments/assets/6442cd02-53ce-443a-b12c-469a57cb9c97" />
 
 ### Struktur
 
@@ -76,3 +77,33 @@ Data aplikasi disimpan sementara di memori dan akan hilang ketika aplikasi ditut
 - `SistemDataMahasiswa/SistemDataMahasiswa.csproj`: konfigurasi project .NET 8 Windows Forms.
 
 ### Dokumentasi
+
+Tampilan Awal
+<img width="1098" height="797" alt="image" src="https://github.com/user-attachments/assets/999b971c-5bf0-4b44-9e78-6d048d44bcfe" />
+
+Penambahan Data
+<img width="1098" height="802" alt="image" src="https://github.com/user-attachments/assets/3972a2a4-030c-4e09-8b78-9626322c24e8" />
+
+Pencarian Data 
+<img width="1100" height="787" alt="image" src="https://github.com/user-attachments/assets/7aff5005-cf4c-44ad-91f1-b990e17dfaf5" />
+<img width="1100" height="782" alt="image" src="https://github.com/user-attachments/assets/c2443df5-0404-485e-94d7-8d75e5ea34a6" />
+
+Tampilan Edit Data (NRP Terkunci)
+<img width="1098" height="797" alt="image" src="https://github.com/user-attachments/assets/0c13c002-3062-4952-a4b5-9d819c5a32d0" />
+
+Edit Data Berhasil
+<img width="1100" height="795" alt="image" src="https://github.com/user-attachments/assets/6a8db6ba-8291-434d-bb7f-9a22f959e4a2" />
+
+Hapus Data
+<img width="1102" height="790" alt="image" src="https://github.com/user-attachments/assets/3aed6dcf-b4e1-4ab8-9257-11023a17daf1" />
+
+Validasi Parameter Input Data
+<img width="1098" height="797" alt="image" src="https://github.com/user-attachments/assets/390c95cc-096e-4be5-920c-90b22645e669" />
+
+NRP Tidak Boleh Sama
+<img width="1097" height="780" alt="image" src="https://github.com/user-attachments/assets/b4e6b8f4-c565-4657-bce9-4b167be650be" />
+
+Validasi Input IPK
+<img width="1102" height="790" alt="image" src="https://github.com/user-attachments/assets/360e6e87-8ad7-4091-afd8-d5ee2acc5a7e" />
+
+
