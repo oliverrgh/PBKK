@@ -3,9 +3,11 @@ namespace KalkulatorSederhana;
 public partial class Form1 : Form
 {
     private readonly TextBox display = new();
+    private readonly Label expressionDisplay = new();
     private decimal storedValue;
     private string pendingOperator = string.Empty;
     private bool resetDisplay;
+    private bool isError;
 
     public Form1()
     {
@@ -34,8 +36,26 @@ public partial class Form1 : Form
             Font = new Font("Segoe UI Semibold", 11F)
         };
 
-        display.Dock = DockStyle.Top;
-        display.Height = 78;
+        var displayPanel = new TableLayoutPanel
+        {
+            Dock = DockStyle.Top,
+            Height = 88,
+            ColumnCount = 1,
+            RowCount = 2,
+            Padding = new Padding(8, 4, 8, 4),
+            BackColor = Color.White,
+            BorderStyle = BorderStyle.FixedSingle,
+            Margin = new Padding(0, 0, 0, 14)
+        };
+        displayPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
+        displayPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+
+        expressionDisplay.Dock = DockStyle.Fill;
+        expressionDisplay.TextAlign = ContentAlignment.MiddleRight;
+        expressionDisplay.ForeColor = Color.FromArgb(145, 151, 160);
+        expressionDisplay.Font = new Font("Segoe UI", 10F);
+
+        display.Dock = DockStyle.Fill;
         display.Text = "0";
         display.ReadOnly = true;
         display.TabStop = false;
@@ -43,8 +63,10 @@ public partial class Form1 : Form
         display.Font = new Font("Segoe UI Semibold", 30F);
         display.ForeColor = Color.FromArgb(35, 42, 52);
         display.BackColor = Color.White;
-        display.BorderStyle = BorderStyle.FixedSingle;
-        display.Margin = new Padding(0, 0, 0, 14);
+        display.BorderStyle = BorderStyle.None;
+        display.Margin = Padding.Empty;
+        displayPanel.Controls.Add(expressionDisplay, 0, 0);
+        displayPanel.Controls.Add(display, 0, 1);
 
         var buttons = new TableLayoutPanel
         {
@@ -79,7 +101,7 @@ public partial class Form1 : Form
         }
 
         Controls.Add(buttons);
-        Controls.Add(display);
+        Controls.Add(displayPanel);
         Controls.Add(title);
     }
 
@@ -117,22 +139,43 @@ public partial class Form1 : Form
 
     private void HandleInput(string input)
     {
+        if (isError && input != "C")
+        {
+            if (decimal.TryParse(input, out _) || input is "." or ",")
+            {
+                display.Text = "0";
+                expressionDisplay.Text = string.Empty;
+                storedValue = 0;
+                pendingOperator = string.Empty;
+                resetDisplay = false;
+                isError = false;
+            }
+            else
+            {
+                return;
+            }
+        }
+
         if (input is "." or ",")
         {
             if (resetDisplay)
             {
+                if (string.IsNullOrEmpty(pendingOperator)) expressionDisplay.Text = string.Empty;
                 display.Text = "0";
                 resetDisplay = false;
             }
             if (!display.Text.Contains('.')) display.Text += ".";
+            UpdateExpressionDisplay();
             return;
         }
 
         if (decimal.TryParse(input, out _))
         {
+            if (resetDisplay && string.IsNullOrEmpty(pendingOperator)) expressionDisplay.Text = string.Empty;
             if (display.Text == "0" || resetDisplay) display.Text = input;
             else if (display.Text.Length < 16) display.Text += input;
             resetDisplay = false;
+            UpdateExpressionDisplay();
             return;
         }
 
@@ -143,17 +186,22 @@ public partial class Form1 : Form
                 storedValue = 0;
                 pendingOperator = string.Empty;
                 resetDisplay = false;
+                isError = false;
+                expressionDisplay.Text = string.Empty;
                 break;
             case "DEL":
                 if (!resetDisplay && display.Text.Length > 1)
                     display.Text = display.Text[..^1];
                 else if (!resetDisplay) display.Text = "0";
+                UpdateExpressionDisplay();
                 break;
             case "+/-":
                 if (display.Text != "0") display.Text = display.Text.StartsWith('-') ? display.Text[1..] : "-" + display.Text;
+                UpdateExpressionDisplay();
                 break;
             case "%":
                 display.Text = (decimal.Parse(display.Text) / 100).ToString("G");
+                UpdateExpressionDisplay();
                 break;
             case "+" or "-" or "*" or "/":
                 SetOperator(input);
@@ -170,6 +218,7 @@ public partial class Form1 : Form
         storedValue = decimal.Parse(display.Text);
         pendingOperator = @operator;
         resetDisplay = true;
+        UpdateExpressionDisplay();
     }
 
     private void CalculateResult()
@@ -177,11 +226,13 @@ public partial class Form1 : Form
         if (string.IsNullOrEmpty(pendingOperator)) return;
 
         var currentValue = decimal.Parse(display.Text);
+        expressionDisplay.Text = $"{storedValue:G} {GetOperatorSymbol(pendingOperator)} {currentValue:G} =";
         if (pendingOperator == "/" && currentValue == 0)
         {
-            display.Text = "Tidak bisa dibagi 0";
+            display.Text = "Error";
             pendingOperator = string.Empty;
             resetDisplay = true;
+            isError = true;
             return;
         }
 
@@ -197,6 +248,22 @@ public partial class Form1 : Form
         pendingOperator = string.Empty;
         resetDisplay = true;
     }
+
+    private void UpdateExpressionDisplay()
+    {
+        if (string.IsNullOrEmpty(pendingOperator)) return;
+
+        var expression = $"{storedValue:G} {GetOperatorSymbol(pendingOperator)}";
+        if (!resetDisplay) expression += $" {display.Text}";
+        expressionDisplay.Text = expression;
+    }
+
+    private static string GetOperatorSymbol(string @operator) => @operator switch
+    {
+        "*" => "×",
+        "/" => "÷",
+        _ => @operator
+    };
 
     private void FormKeyDown(object? sender, KeyEventArgs e)
     {
