@@ -144,10 +144,6 @@ public partial class Form1 : Form
             _tombolCari.FlatAppearance.BorderSize = 0;
             _tombolCari.Click += AksiKlikCari;
 
-            Button tombolTampilkan = new Button { Text = "TAMPILKAN SEMUA", Location = new Point(410, 16), Width = 120, Height = 32, BackColor = Color.FromArgb(16, 185, 129), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand, Font = new Font("Segoe UI", 8.5F, FontStyle.Bold) };
-            tombolTampilkan.FlatAppearance.BorderSize = 0;
-            tombolTampilkan.Click += AksiKlikTampilkan;
-            
             _tombolEdit = new Button { Text = "UBAH DATA TERPILIH", Location = new Point(24, 58), Width = 170, Height = 32, BackColor = Color.FromArgb(14, 165, 233), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand, Font = new Font("Segoe UI", 8.5F, FontStyle.Bold), Anchor = AnchorStyles.Top | AnchorStyles.Left };
             _tombolEdit.FlatAppearance.BorderSize = 0;
             _tombolEdit.Click += AksiKlikMulaiEdit;
@@ -156,7 +152,7 @@ public partial class Form1 : Form
             _tombolHapus.FlatAppearance.BorderSize = 0;
             _tombolHapus.Click += AksiKlikHapus;
 
-            panelTengah.Controls.AddRange(new Control[] { _kolomPencarian, _tombolCari, tombolTampilkan, _tombolEdit, _tombolHapus });
+            panelTengah.Controls.AddRange(new Control[] { _kolomPencarian, _tombolCari, _tombolEdit, _tombolHapus });
 
             _tabelVisual = new DataGridView
             {
@@ -315,12 +311,6 @@ public partial class Form1 : Form
                 MessageBox.Show($"Data dengan kata kunci '{kataKunci}' tidak ditemukan.", "Hasil Pencarian", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            PerbaruiTabel();
-        }
-
-        private void AksiKlikTampilkan(object sender, EventArgs e)
-        {
-            _kolomPencarian.Clear();
             PerbaruiTabel();
         }
 
