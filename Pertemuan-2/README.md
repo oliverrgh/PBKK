@@ -29,8 +29,6 @@ dotnet run --project .\HelloWorld\HelloWorld.csproj
 
 Dokumentasi:
 
-
-
 ### Struktur
 
 - `HelloWorld/Program.cs`: titik masuk aplikasi.
