@@ -84,7 +84,7 @@ public partial class Form1 : Form
             _kolomNama = new TextBox { Location = new Point(200, 70), Width = 250, Font = new Font("Segoe UI", 10F), BorderStyle = BorderStyle.FixedSingle };
 
             Label lblJurusan = new Label { Text = "PROGRAM STUDI", Location = new Point(470, 48), AutoSize = true, ForeColor = WarnaTeksPanel, Font = new Font("Segoe UI", 9F, FontStyle.Bold) };
-            _pilihanJurusan = new ComboBox { Location = new Point(470, 69), Width = 220, DropDownStyle = ComboBoxStyle.DropDownList, Font = new Font("Segoe UI", 10F), FlatStyle = FlatStyle.Flat };
+            _pilihanJurusan = new ComboBox { Location = new Point(470, 69), Width = 150, DropDownWidth = 220, DropDownStyle = ComboBoxStyle.DropDownList, Font = new Font("Segoe UI", 10F), FlatStyle = FlatStyle.Flat };
             
             _pilihanJurusan.Items.AddRange(new string[] { 
                 "Teknik Informatika", 
@@ -104,16 +104,16 @@ public partial class Form1 : Form
 
             _tombolSimpan = new Button 
             { 
-                Text = "SIMPAN DATA",
-                Location = new Point(730, 35),
-                Width = 130,
-                Height = 42,
+                Text = "TAMBAH / SIMPAN DATA",
+                Location = new Point(24, 112),
+                Width = 170,
+                Height = 38,
                 BackColor = Color.FromArgb(245, 158, 11),
                 ForeColor = Color.White, 
                 FlatStyle = FlatStyle.Flat,
                 Font = new Font("Segoe UI", 9F, FontStyle.Bold),
                 Cursor = Cursors.Hand,
-                Anchor = AnchorStyles.Top | AnchorStyles.Right
+                Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
             _tombolSimpan.FlatAppearance.BorderSize = 0;
             _tombolSimpan.Click += AksiKlikSimpan;
@@ -121,38 +121,42 @@ public partial class Form1 : Form
             _tombolReset = new Button 
             { 
                 Text = "BATAL / RESET",
-                Location = new Point(730, 84),
-                Width = 130,
-                Height = 42,
+                Location = new Point(210, 112),
+                Width = 145,
+                Height = 38,
                 BackColor = Color.FromArgb(100, 116, 139),
                 ForeColor = Color.White, 
                 FlatStyle = FlatStyle.Flat,
                 Font = new Font("Segoe UI", 9F, FontStyle.Bold),
                 Cursor = Cursors.Hand,
-                Anchor = AnchorStyles.Top | AnchorStyles.Right
+                Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
             _tombolReset.FlatAppearance.BorderSize = 0;
             _tombolReset.Click += (s, e) => KosongkanForm();
 
             panelForm.Controls.AddRange(new Control[] { lblForm, lblNrp, _kolomNRP, lblNama, _kolomNama, lblJurusan, _pilihanJurusan, lblIpk, _kolomIPK, _tombolSimpan, _tombolReset });
 
-            Panel panelTengah = new Panel { Dock = DockStyle.Top, Height = 68, BackColor = WarnaBackground, Padding = new Padding(24, 15, 24, 10) };
+            Panel panelTengah = new Panel { Dock = DockStyle.Top, Height = 106, BackColor = WarnaBackground, Padding = new Padding(24, 15, 24, 10) };
             
             _kolomPencarian = new TextBox { Location = new Point(24, 18), Width = 280, PlaceholderText = "Cari berdasarkan NRP atau nama...", Font = new Font("Segoe UI", 10F), BorderStyle = BorderStyle.FixedSingle };
             
             _tombolCari = new Button { Text = "CARI", Location = new Point(314, 16), Width = 84, Height = 32, BackColor = Color.FromArgb(37, 99, 235), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand, Font = new Font("Segoe UI", 9F, FontStyle.Bold) };
             _tombolCari.FlatAppearance.BorderSize = 0;
             _tombolCari.Click += AksiKlikCari;
+
+            Button tombolTampilkan = new Button { Text = "TAMPILKAN SEMUA", Location = new Point(410, 16), Width = 120, Height = 32, BackColor = Color.FromArgb(16, 185, 129), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand, Font = new Font("Segoe UI", 8.5F, FontStyle.Bold) };
+            tombolTampilkan.FlatAppearance.BorderSize = 0;
+            tombolTampilkan.Click += AksiKlikTampilkan;
             
-            _tombolEdit = new Button { Text = "Edit Data Terpilih", Location = new Point(540, 16), Width = 150, Height = 32, BackColor = Color.FromArgb(14, 165, 233), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand, Font = new Font("Segoe UI", 9F, FontStyle.Bold), Anchor = AnchorStyles.Top | AnchorStyles.Right };
+            _tombolEdit = new Button { Text = "UBAH DATA TERPILIH", Location = new Point(24, 58), Width = 170, Height = 32, BackColor = Color.FromArgb(14, 165, 233), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand, Font = new Font("Segoe UI", 8.5F, FontStyle.Bold), Anchor = AnchorStyles.Top | AnchorStyles.Left };
             _tombolEdit.FlatAppearance.BorderSize = 0;
             _tombolEdit.Click += AksiKlikMulaiEdit;
 
-            _tombolHapus = new Button { Text = "Hapus Data Terpilih", Location = new Point(710, 16), Width = 150, Height = 32, BackColor = Color.FromArgb(220, 38, 38), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand, Font = new Font("Segoe UI", 9F, FontStyle.Bold), Anchor = AnchorStyles.Top | AnchorStyles.Right };
+            _tombolHapus = new Button { Text = "HAPUS DATA TERPILIH", Location = new Point(210, 58), Width = 170, Height = 32, BackColor = Color.FromArgb(220, 38, 38), ForeColor = Color.White, FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand, Font = new Font("Segoe UI", 8.5F, FontStyle.Bold), Anchor = AnchorStyles.Top | AnchorStyles.Left };
             _tombolHapus.FlatAppearance.BorderSize = 0;
             _tombolHapus.Click += AksiKlikHapus;
 
-            panelTengah.Controls.AddRange(new Control[] { _kolomPencarian, _tombolCari, _tombolEdit, _tombolHapus });
+            panelTengah.Controls.AddRange(new Control[] { _kolomPencarian, _tombolCari, tombolTampilkan, _tombolEdit, _tombolHapus });
 
             _tabelVisual = new DataGridView
             {
@@ -218,7 +222,8 @@ public partial class Form1 : Form
                 return;
             }
 
-            if (!_sedangModeEdit && _layananData.CekNrpTersedia(_kolomNRP.Text))
+            string nrp = _kolomNRP.Text.Trim();
+            if (!_sedangModeEdit && _layananData.CekNrpTersedia(nrp))
             {
                 MessageBox.Show("NRP sudah terdaftar! Harap gunakan NRP yang berbeda.", "Validasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -239,8 +244,8 @@ public partial class Form1 : Form
 
             var entriMahasiswa = new Mahasiswa
             {
-                NRP = _kolomNRP.Text,
-                NamaLengkap = _kolomNama.Text,
+                NRP = nrp,
+                NamaLengkap = _kolomNama.Text.Trim(),
                 ProgramStudi = _pilihanJurusan.Text,
                 IPK = Math.Round(nilaiIpk, 2) 
             };
@@ -313,6 +318,12 @@ public partial class Form1 : Form
             PerbaruiTabel();
         }
 
+        private void AksiKlikTampilkan(object sender, EventArgs e)
+        {
+            _kolomPencarian.Clear();
+            PerbaruiTabel();
+        }
+
         private void PerbaruiTabel()
         {
             _tabelVisual.DataSource = null;
@@ -328,7 +339,7 @@ public partial class Form1 : Form
             
             _sedangModeEdit = false;
             _kolomNRP.Enabled = true;
-            _tombolSimpan.Text = "SIMPAN DATA";
+            _tombolSimpan.Text = "TAMBAH / SIMPAN DATA";
             _tombolSimpan.BackColor = WarnaAksenSimpan;
             
             _kolomNRP.Focus(); 
