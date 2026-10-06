@@ -62,18 +62,18 @@ Jalankan aplikasi, lalu ikuti setiap langkah berikut. Pastikan menekan tombol `C
 
 | ID | Skenario | Langkah Pengujian | Hasil yang Diharapkan |
 | --- | --- | --- | --- |
-| TC-01 | Penjumlahan | Tekan `8`, `+`, `7`, lalu `=`. | Display menunjukkan `15`. |
-| TC-02 | Pengurangan | Tekan `20`, `-`, `6`, lalu `=`. | Display menunjukkan `14`. |
-| TC-03 | Perkalian | Tekan `9`, `*`, `5`, lalu `=`. | Display menunjukkan `45`. |
-| TC-04 | Pembagian | Tekan `81`, `/`, `9`, lalu `=`. | Display menunjukkan `9`. |
-| TC-05 | Bilangan desimal | Tekan `1`, `.`, `5`, `+`, `2`, `.`, `25`, lalu `=`. | Display menunjukkan `3.75`. |
-| TC-06 | Persentase | Tekan `5`, `0`, lalu `%`. | Display menunjukkan `0.5`. |
-| TC-07 | Perubahan tanda | Tekan `7`, lalu `+/-`. | Display berubah menjadi `-7`. Tekan `+/-` lagi untuk kembali menjadi `7`. |
-| TC-08 | Hapus karakter | Tekan `1`, `2`, `3`, lalu `DEL`. | Display berubah dari `123` menjadi `12`. |
-| TC-09 | Reset kalkulator | Masukkan operasi apa pun, lalu tekan `C`. | Display kembali menjadi `0` dan operasi yang sedang berjalan dibatalkan. |
-| TC-10 | Pembagian dengan nol | Tekan `8`, `/`, `0`, lalu `=`. | Display menunjukkan pesan `Tidak bisa dibagi 0`. |
-| TC-11 | Keyboard | Tekan angka dan operator menggunakan keyboard, lalu tekan `Enter`. | Perhitungan berjalan seperti saat tombol pada layar digunakan. |
-| TC-12 | Operator berurutan | Tekan `10`, `+`, `5`, `*`, `2`, lalu `=`. | Hasil dihitung berdasarkan urutan input kalkulator dan display menunjukkan `30`. |
+| 01 | Penjumlahan | Tekan `8`, `+`, `7`, lalu `=`. | Display menunjukkan `15`. |
+| 02 | Pengurangan | Tekan `5`, `-`, `11`, lalu `=`. | Display menunjukkan `-6`. |
+| 03 | Perkalian | Tekan `9`, `*`, `5`, lalu `=`. | Display menunjukkan `45`. |
+| 04 | Pembagian | Tekan `81`, `/`, `9`, lalu `=`. | Display menunjukkan `9`. |
+| 05 | Bilangan desimal | Tekan `1`, `.`, `5`, `+`, `2`, `.`, `25`, lalu `=`. | Display menunjukkan `3.75`. |
+| 06 | Persentase | Tekan `5`, `0`, lalu `%`. | Display menunjukkan `0.5`. |
+| 07 | Perubahan tanda | Tekan `7`, lalu `+/-`. | Display berubah menjadi `-7`. Tekan `+/-` lagi untuk kembali menjadi `7`. |
+| 08 | Hapus karakter | Tekan `1`, `2`, `3`, lalu `DEL`. | Display berubah dari `123` menjadi `12`. |
+| 09 | Reset kalkulator | Masukkan operasi apa pun, lalu tekan `C`. | Display kembali menjadi `0` dan operasi yang sedang berjalan dibatalkan. |
+| 10 | Pembagian dengan nol | Tekan `-6`, `/`, `0`, lalu `=`. | Display menunjukkan pesan `Error`. |
+| 11 | Keyboard | Tekan angka dan operator menggunakan keyboard, lalu tekan `Enter`. | Perhitungan berjalan seperti saat tombol pada layar digunakan. |
+| 12 | Operator berurutan | Tekan `10`, `+`, `5`, `*`, `2`, lalu `=`. | Hasil dihitung berdasarkan urutan input kalkulator dan display menunjukkan `30`. |
 
 ## Hasil Pengujian Terakhir
 
@@ -87,3 +87,25 @@ Kalkulator menggunakan urutan operasi berdasarkan tombol yang ditekan. Aplikasi 
 
 ### Dokumentasi
 
+Penjumlahan
+
+![alt text](Dokumentasi/penjumlahan.png)
+
+Pengurangan
+
+![alt text](Dokumentasi/pengurangan.png)
+
+Perkalian
+
+![alt text](Dokumentasi/perkalian.png)
+
+Pembagian
+
+![alt text](Dokumentasi/pembagian.png)
+
+Bilangan Desimal
+
+
+Pembagian dengan Nol
+
+![alt text](Dokumentasi/pembagianNol.png)
