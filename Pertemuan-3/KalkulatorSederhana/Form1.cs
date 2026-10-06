@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace KalkulatorSederhana;
 
 public partial class Form1 : Form
@@ -141,7 +143,7 @@ public partial class Form1 : Form
     {
         if (isError && input != "C")
         {
-            if (decimal.TryParse(input, out _) || input is "." or ",")
+            if (decimal.TryParse(input, NumberStyles.Number, CultureInfo.InvariantCulture, out _) || input is "." or ",")
             {
                 display.Text = "0";
                 expressionDisplay.Text = string.Empty;
@@ -169,7 +171,7 @@ public partial class Form1 : Form
             return;
         }
 
-        if (decimal.TryParse(input, out _))
+        if (decimal.TryParse(input, NumberStyles.Number, CultureInfo.InvariantCulture, out _))
         {
             if (resetDisplay && string.IsNullOrEmpty(pendingOperator)) expressionDisplay.Text = string.Empty;
             if (display.Text == "0" || resetDisplay) display.Text = input;
@@ -200,7 +202,7 @@ public partial class Form1 : Form
                 UpdateExpressionDisplay();
                 break;
             case "%":
-                display.Text = (decimal.Parse(display.Text) / 100).ToString("G");
+                display.Text = FormatValue(ParseDisplayValue() / 100);
                 UpdateExpressionDisplay();
                 break;
             case "+" or "-" or "*" or "/":
@@ -215,7 +217,7 @@ public partial class Form1 : Form
     private void SetOperator(string @operator)
     {
         if (!string.IsNullOrEmpty(pendingOperator) && !resetDisplay) CalculateResult();
-        storedValue = decimal.Parse(display.Text);
+        storedValue = ParseDisplayValue();
         pendingOperator = @operator;
         resetDisplay = true;
         UpdateExpressionDisplay();
@@ -225,8 +227,8 @@ public partial class Form1 : Form
     {
         if (string.IsNullOrEmpty(pendingOperator)) return;
 
-        var currentValue = decimal.Parse(display.Text);
-        expressionDisplay.Text = $"{storedValue:G} {GetOperatorSymbol(pendingOperator)} {currentValue:G} =";
+        var currentValue = ParseDisplayValue();
+        expressionDisplay.Text = $"{FormatValue(storedValue)} {GetOperatorSymbol(pendingOperator)} {FormatValue(currentValue)} =";
         if (pendingOperator == "/" && currentValue == 0)
         {
             display.Text = "Error";
@@ -244,7 +246,7 @@ public partial class Form1 : Form
             "/" => storedValue / currentValue,
             _ => currentValue
         };
-        display.Text = storedValue.ToString("G");
+        display.Text = FormatValue(storedValue);
         pendingOperator = string.Empty;
         resetDisplay = true;
     }
@@ -253,7 +255,7 @@ public partial class Form1 : Form
     {
         if (string.IsNullOrEmpty(pendingOperator)) return;
 
-        var expression = $"{storedValue:G} {GetOperatorSymbol(pendingOperator)}";
+        var expression = $"{FormatValue(storedValue)} {GetOperatorSymbol(pendingOperator)}";
         if (!resetDisplay) expression += $" {display.Text}";
         expressionDisplay.Text = expression;
     }
@@ -264,6 +266,10 @@ public partial class Form1 : Form
         "/" => "÷",
         _ => @operator
     };
+
+    private decimal ParseDisplayValue() => decimal.Parse(display.Text, CultureInfo.InvariantCulture);
+
+    private static string FormatValue(decimal value) => value.ToString("G", CultureInfo.InvariantCulture);
 
     private void FormKeyDown(object? sender, KeyEventArgs e)
     {

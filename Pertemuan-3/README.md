@@ -105,6 +105,7 @@ Pembagian
 
 Bilangan Desimal
 
+![alt text](Dokumentasi/desimal.png)
 
 Pembagian dengan Nol
 
