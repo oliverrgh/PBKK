@@ -347,9 +347,6 @@ Contoh validasi juga tersedia di folder [`Documentation`](Documentation/).
 ---
 
 ## Jawaban Pertanyaan
-Berdasarkan dokumen *Product Requirements Document* (PRD) **Aplikasi Booking Ruangan & Fasilitas Kampus** (Booking Kampus), berikut adalah penjelasan mengenai deskripsi, ruang lingkup fitur, latar belakang, dan manfaat pembuatan aplikasi tersebut:
-
----
 
 ### 1. Deskripsi dan Ruang Lingkup Fitur Aplikasi Desktop Rich UI
 
@@ -434,7 +431,9 @@ Berdasarkan dokumen *Product Requirements Document* (PRD) **Aplikasi Booking Rua
 
 * Mengelola katalog data master ruangan, fasilitas, dan relasinya dengan lebih konsisten dan aman.
 
+### 3. Infografis Aplikasi
 
+(Documentation/infografis.png)
 
 
 
