@@ -433,7 +433,7 @@ Contoh validasi juga tersedia di folder [`Documentation`](Documentation/).
 
 ### 3. Infografis Aplikasi
 
-!(Documentation/infografis.png)
+![Infografis](Documentation/infografis.png)
 
 
 
