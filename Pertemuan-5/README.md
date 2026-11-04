@@ -96,7 +96,7 @@ Ubah salah satu informasi mahasiswa yang dipilih, simpan perubahan, lalu tampilk
 
 Masukkan kata kunci yang cocok dengan NIM, nama, atau jurusan, lalu klik **Cari**. Tampilkan hasil yang sesuai dan jumlah hasil pada pesan status. Statistik di bagian atas mengikuti data hasil pencarian.
 
-![Hasil pencarian mahasiswa](./Dokumentasi/pencarian-data.png)
+![Hasil pencarian mahasiswa](./Dokumentasi/cari-data.png)
 
 #### 6. Konfirmasi dan Hasil Penghapusan
 
