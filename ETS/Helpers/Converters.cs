@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
@@ -21,3 +22,28 @@ public class InverseBoolConverter : IValueConverter
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) =>
         value is bool b ? !b : false;
 }
+=======
+using System.Globalization;
+using System.Windows;
+using System.Windows.Data;
+
+namespace BookingKampus.Helpers;
+
+public class InverseBoolToVisibilityConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture) =>
+        value is bool b && b ? Visibility.Collapsed : Visibility.Visible;
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) =>
+        throw new NotSupportedException();
+}
+
+public class InverseBoolConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture) =>
+        value is bool b ? !b : true;
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) =>
+        value is bool b ? !b : false;
+}
+>>>>>>> 483c16a2c6c6014653cb604fd45629248707663c
