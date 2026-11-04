@@ -44,8 +44,6 @@ Data mahasiswa mencakup NIM, nama, jurusan, gender, dan email. NIM dan nama waji
 
 3. Jika menggunakan LocalDB, pastikan instance tersedia. Dari PowerShell, periksa dengan `sqllocaldb info` dan jalankan `sqllocaldb start MSSQLLocalDB` bila diperlukan.
 
-> Connection string yang ada di project saat ini berisi nama server tertentu. Ubah sebelum menjalankan aplikasi jika server tersebut tidak tersedia di komputer Anda.
-
 ### Build & Run
 
 Dari folder utama repository:
@@ -68,57 +66,57 @@ Statistik mengikuti data yang sedang ditampilkan, sehingga hasil pencarian juga 
 
 ### Dokumentasi
 
-Simpan screenshot pada folder `Pertemuan-5/dokumentasi/`, lalu gunakan nama file pada gambar di bawah. Screenshot sebaiknya menampilkan jendela aplikasi secara utuh, termasuk tabel, statistik, dan pesan status yang relevan.
+Simpan screenshot pada folder `Pertemuan-5/Dokumentasi/`, lalu gunakan nama file pada gambar di bawah. Screenshot sebaiknya menampilkan jendela aplikasi secara utuh, termasuk tabel, statistik, dan pesan status yang relevan.
 
 #### 1. Tampilan Awal
 
 Tampilkan aplikasi setelah berhasil terhubung ke database dan memuat data contoh. Pastikan tabel berisi data mahasiswa dan kartu statistik menampilkan jumlah total, jurusan, serta gender.
 
-![Tampilan awal aplikasi dan statistik](./dokumentasi/tampilan-awal.png)
+![Tampilan awal aplikasi dan statistik](./Dokumentasi/tampilan-awal.png)
 
 #### 2. Penambahan Data Berhasil
 
 Isi form dengan data mahasiswa baru yang belum ada di database, lalu klik **Simpan Data**. Tampilkan data baru pada tabel dan pesan bahwa data berhasil disimpan.
 
-![Penambahan data mahasiswa berhasil](./dokumentasi/tambah-data.png)
+![Penambahan data mahasiswa berhasil](./Dokumentasi/tambah-data.png)
 
 #### 3. Memilih Data untuk Diedit
 
 Pilih salah satu baris pada tabel. Tampilkan data terpilih yang terisi pada form sebagai bukti bahwa baris dapat digunakan untuk mengubah data.
 
-![Data terpilih tampil pada form](./dokumentasi/pilih-data.png)
+![Data terpilih tampil pada form](./Dokumentasi/pilih-data.png)
 
 #### 4. Perubahan Data Berhasil
 
 Ubah salah satu informasi mahasiswa yang dipilih, simpan perubahan, lalu tampilkan nilai terbaru pada tabel beserta pesan keberhasilan.
 
-![Perubahan data mahasiswa berhasil](./dokumentasi/edit-data.png)
+![Perubahan data mahasiswa berhasil](./Dokumentasi/edit-data.png)
 
 #### 5. Pencarian Data
 
 Masukkan kata kunci yang cocok dengan NIM, nama, atau jurusan, lalu klik **Cari**. Tampilkan hasil yang sesuai dan jumlah hasil pada pesan status. Statistik di bagian atas mengikuti data hasil pencarian.
 
-![Hasil pencarian mahasiswa](./dokumentasi/pencarian-data.png)
+![Hasil pencarian mahasiswa](./Dokumentasi/pencarian-data.png)
 
 #### 6. Konfirmasi dan Hasil Penghapusan
 
 Pilih baris yang akan dihapus dan klik **Hapus Data Terpilih**. Dokumentasikan dialog konfirmasi, kemudian ambil screenshot lagi setelah memilih **Yes** untuk menunjukkan baris sudah hilang dan pesan keberhasilan tampil.
 
-![Konfirmasi penghapusan data](./dokumentasi/konfirmasi-hapus.png)
+![Konfirmasi penghapusan data](./Dokumentasi/konfirmasi-hapus.png)
 
-![Data berhasil dihapus](./dokumentasi/hapus-data.png)
+![Data berhasil dihapus](./Dokumentasi/hapus-data.png)
 
 #### 7. Validasi Input Wajib
 
 Kosongkan NIM atau nama, lalu klik **Simpan Data**. Tampilkan pesan validasi yang meminta NIM dan nama diisi.
 
-![Validasi NIM dan nama wajib diisi](./dokumentasi/validasi-input.png)
+![Validasi NIM dan nama wajib diisi](./Dokumentasi/validasi-input.png)
 
 #### 8. Reset Form
 
 Isi beberapa kolom atau pilih data dari tabel, lalu klik **Reset Form**. Tampilkan form yang kembali kosong dengan pilihan jurusan dan gender default serta pesan status reset.
 
-![Form berhasil direset](./dokumentasi/reset-form.png)
+![Form berhasil direset](./Dokumentasi/reset-form.png)
 ### Struktur
 
 - `StudentManager/App.xaml` dan `StudentManager/App.xaml.cs`: konfigurasi dan titik awal aplikasi WPF.
