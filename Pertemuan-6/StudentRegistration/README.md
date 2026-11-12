@@ -86,19 +86,6 @@ WPF berjalan di Windows. Pastikan SQL Server aktif, database telah disiapkan, da
 
 ## Dokumentasi screenshot
 
-Simpan screenshot aplikasi pada folder `Dokumentasi/` di dalam folder project. Ambil gambar jendela aplikasi secara utuh agar sidebar statistik, tabel, kolom pencarian, dan status aplikasi terlihat. Gunakan data contoh atau data uji yang tidak memuat informasi pribadi.
-
-| File screenshot | Yang perlu ditampilkan |
-| --- | --- |
-| `Dokumentasi/tampilan-awal.png` | Aplikasi setelah data berhasil dimuat: statistik total, distribusi program studi, tabel mahasiswa, dan status online. |
-| `Dokumentasi/pencarian-nrp.png` | Kata kunci NRP di kolom pencarian, baris yang cocok, dan jumlah hasil pada status di bawah tabel. |
-| `Dokumentasi/pencarian-nama.png` | Pencarian berdasarkan nama mahasiswa dan hasil filter yang sesuai. |
-| `Dokumentasi/pencarian-program-alamat.png` | Pencarian berdasarkan program studi atau alamat. Ambil dua gambar terpisah jika ingin memperlihatkan kedua jenis pencarian dengan jelas. |
-| `Dokumentasi/refresh.png` | Setelah pencarian aktif, klik **Refresh** lalu tampilkan kolom pencarian yang kosong dan daftar data yang dimuat ulang. |
-| `Dokumentasi/database-error.png` | Opsional: status offline dan dialog error saat database tidak dapat diakses. Hindari menampilkan informasi sensitif pada detail error. |
-
-Setelah file screenshot ditambahkan, tautkan gambar di bawah ini agar tampil langsung pada README:
-
 ### Tampilan awal dan dashboard
 
 ![Dashboard Student Registration](./Dokumentasi/tampilan-awal.png)
@@ -111,15 +98,13 @@ Setelah file screenshot ditambahkan, tautkan gambar di bawah ini agar tampil lan
 
 ### Pencarian program studi dan alamat
 
-![Pencarian berdasarkan program studi atau alamat](./Dokumentasi/pencarian-program-alamat.png)
+![Pencarian berdasarkan program studi ](./Dokumentasi/pencarian-prodi.png)
+
+![Pencarian berdasarkan alamat](./Dokumentasi/pencarian-alamat.png)
 
 ### Refresh data
 
 ![Data setelah tombol Refresh digunakan](./Dokumentasi/refresh.png)
-
-### Error koneksi database (opsional)
-
-![Status dan dialog saat database tidak dapat diakses](./Dokumentasi/database-error.png)
 
 ## Struktur project
 
